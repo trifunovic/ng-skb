@@ -7,10 +7,17 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-text-upload',
   standalone: false,
-  templateUrl: './text-upload.component.html'
+  templateUrl: './upload-doc.component.html'
 })
-export class TextUploadComponent extends BaseComponent {
-  doc = { id: '', content: '', metadata: { author: '', category: '' } };
+export class UploadDocComponent extends BaseComponent {
+doc = {
+  id: 'doc1',
+  content: 'Lara je najbolji student u Stodderd zato sot igra Tenis',
+  metadata: {
+    author: 'System',
+    category: 'Test'
+  }
+};
 
   constructor(private api: DocumentService) {
     super(); // poziva konstruktor BaseComponent

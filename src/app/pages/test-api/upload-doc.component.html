@@ -1,0 +1,37 @@
+<h2>Add Document</h2>
+
+<div style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px;">
+
+  <label>
+    ID:
+    <input [(ngModel)]="doc.id" placeholder="ID" class="form-control" />
+  </label>
+
+  <label>
+    Content:
+    <textarea [(ngModel)]="doc.content" placeholder="Content" rows="5" class="form-control"></textarea>
+  </label>
+
+  <label>
+    Author:
+    <input [(ngModel)]="doc.metadata.author" placeholder="Author" class="form-control" />
+  </label>
+
+  <label>
+    Category:
+    <input [(ngModel)]="doc.metadata.category" placeholder="Category" class="form-control" />
+  </label>
+
+  <button (click)="submitDoc()" class="btn btn-success">Submit</button>
+
+  <hr />
+
+  <button (click)="submitBulkFromFile()" class="btn btn-primary">
+    Submit Bulk Documents
+  </button>
+
+  <div *ngIf="errorMessage" style="color: red; margin-top: 1rem;">
+    {{ errorMessage }}
+  </div>
+
+</div>
