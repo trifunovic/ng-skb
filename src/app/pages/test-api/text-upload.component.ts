@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { ApiService } from '../../services/api.service'
+import { DocumentService } from '../../services/document.service';
 
 @Component({
   selector: 'app-text-upload',
@@ -10,7 +10,7 @@ import { ApiService } from '../../services/api.service'
 export class TextUploadComponent {
   doc = { id: '', content: '', metadata: { author: '', category: '' } };
 
-  constructor(private api: ApiService) {}
+  constructor(private api: DocumentService) {}
 
   submitDoc() {
     const docToSend = {

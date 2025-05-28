@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { DocumentService } from '../../services/document.service';
 
 @Component({
   selector: 'app-text-list',
@@ -9,10 +9,10 @@ import { ApiService } from '../../services/api.service';
 export class TextListComponent {
   docIds: string[] = [];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: DocumentService) {}
 
   loadDocs() {
-    this.api.listDocuments().subscribe(res => {
+    this.api.getDocuments().subscribe((res: any) => {
       this.docIds = res.document_ids || [];
     });
   }

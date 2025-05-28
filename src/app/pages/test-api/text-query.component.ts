@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { DocumentService } from '../../services/document.service';
 
 @Component({
   selector: 'app-text-query',
@@ -11,10 +11,10 @@ export class TextQueryComponent {
   query = '';
   results: any[] = [];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: DocumentService) {}
 
   search() {
-    this.api.search(this.query).subscribe(res => {
+    this.api.searchDocuments(this.query).subscribe((res: any) => {
       this.results = res.results;
     });
   }

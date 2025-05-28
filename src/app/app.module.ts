@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import {
@@ -26,7 +28,6 @@ import {
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     RouterModule.forRoot([
       { path: 'upload', component: TextUploadComponent },
       { path: 'query', component: TextQueryComponent },
@@ -36,7 +37,12 @@ import {
       { path: '', redirectTo: 'upload', pathMatch: 'full' }
     ])
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

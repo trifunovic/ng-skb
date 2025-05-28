@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { DocumentService } from '../../services/document.service';
 
 @Component({
   selector: 'app-system-info',
@@ -10,13 +10,13 @@ export class SystemInfoComponent {
   config: any;
   pinecone: any;
 
-  constructor(private api: ApiService) {}
+  constructor(private api: DocumentService) {}
 
   getConfig() {
-    this.api.getConfig().subscribe(res => this.config = res);
+    this.api.getConfig().subscribe((res: any) => this.config = res);
   }
 
   testPinecone() {
-    this.api.testPinecone().subscribe(res => this.pinecone = res);
+    this.api.testPinecone().subscribe((res: any) => this.pinecone = res);
   }
 }
