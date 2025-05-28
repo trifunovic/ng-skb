@@ -1,0 +1,7 @@
+
+<h2>Add Document</h2>
+<input [(ngModel)]="doc.id" placeholder="ID" />
+<input [(ngModel)]="doc.content" placeholder="Content" />
+<input [(ngModel)]="doc.metadata.author" placeholder="Author" />
+<input [(ngModel)]="doc.metadata.category" placeholder="Category" />
+<button (click)="submitDoc()">Submit</button>

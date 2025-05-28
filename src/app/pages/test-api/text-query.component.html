@@ -1,0 +1,9 @@
+
+<h2>Search Query</h2>
+<input [(ngModel)]="query" placeholder="Search query" />
+<button (click)="search()">Search</button>
+<ul>
+  <li *ngFor="let r of results">
+    <strong>{{ r.document_id }}</strong> ({{ r.relevance_score }}): {{ r.short_answer }}
+  </li>
+</ul>
