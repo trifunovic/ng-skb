@@ -4,26 +4,26 @@ import { BaseComponent } from './base.component';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-text-list',
+  selector: 'app-text-pinecone',
   standalone: false,
-  templateUrl: './text-list.component.html'
+  templateUrl: './text-pinecone.component.html'
 })
-export class TextListComponent extends BaseComponent {
-  docIds: string[] = [];
+export class TextPineconeComponent extends BaseComponent {
+  response: any;
 
   constructor(private api: DocumentService) {
     super();
   }
 
-  loadDocs(): void {
-    this.docIds = [];
+  testConnection(): void {
     this.errorMessage = '';
     this.successMessage = '';
+    this.response = '';
 
-    this.api.getDocuments().subscribe({
+    this.api.testPinecone().subscribe({
       next: (res: any) => {
-        this.docIds = res.document_ids || [];
-        this.handleSuccess(`✅ Loaded ${this.docIds.length} document IDs.`);
+        this.response = JSON.stringify(res, null, 2);
+        this.handleSuccess('✅ Pinecone connection successful.');
       },
       error: (err: HttpErrorResponse) => this.handleHttpError(err)
     });

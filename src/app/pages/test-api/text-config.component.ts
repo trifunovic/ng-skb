@@ -4,26 +4,26 @@ import { BaseComponent } from './base.component';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-text-list',
+  selector: 'app-text-config',
   standalone: false,
-  templateUrl: './text-list.component.html'
+  templateUrl: './text-config.component.html'
 })
-export class TextListComponent extends BaseComponent {
-  docIds: string[] = [];
+export class TextConfigComponent extends BaseComponent {
+  configData: string = '';
 
   constructor(private api: DocumentService) {
     super();
   }
 
-  loadDocs(): void {
-    this.docIds = [];
+  loadConfig(): void {
     this.errorMessage = '';
     this.successMessage = '';
+    this.configData = '';
 
-    this.api.getDocuments().subscribe({
+    this.api.getConfig().subscribe({
       next: (res: any) => {
-        this.docIds = res.document_ids || [];
-        this.handleSuccess(`✅ Loaded ${this.docIds.length} document IDs.`);
+        this.configData = JSON.stringify(res, null, 2);
+        this.handleSuccess('✅ Config loaded successfully.');
       },
       error: (err: HttpErrorResponse) => this.handleHttpError(err)
     });

@@ -1,9 +1,26 @@
-
 <h2>Search Query</h2>
-<input [(ngModel)]="query" placeholder="Search query" />
+
+<input type="text" [(ngModel)]="query" placeholder="Enter search query..." />
 <button (click)="search()">Search</button>
-<ul>
-  <li *ngFor="let r of results">
-    <strong>{{ r.document_id }}</strong> ({{ r.relevance_score }}): {{ r.short_answer }}
-  </li>
-</ul>
+
+<div *ngIf="errorMessage" style="color: red; margin-top: 1rem; white-space: pre-wrap;">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="results.length > 0" style="margin-top: 1rem;">
+  <h3>Results:</h3>
+  <ul>
+    <li *ngFor="let result of results">
+      <strong>{{ result.document_id }}</strong> ({{ result.relevance_score | number:'1.2-2' }})
+      <div style="margin-left: 1rem; font-style: italic;">
+        {{ result.metadata?.content }}
+      </div>
+    </li>
+  </ul>
+</div>
+
+<hr />
+<button (click)="loadAllDocuments()">Load Docs</button>
+<div *ngFor="let doc of results">
+  <strong>{{ doc.id }}:</strong> {{ doc.content }}
+</div>

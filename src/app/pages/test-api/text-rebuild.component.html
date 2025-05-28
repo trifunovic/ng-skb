@@ -1,4 +1,17 @@
 <h2>Rebuild Index</h2>
-<textarea [(ngModel)]="docsJson" rows="6" style="width: 100%"></textarea>
-<button (click)="rebuild()">Rebuild</button>
-<pre>{{ response }}</pre>
+
+<textarea [(ngModel)]="docsJson" rows="12" cols="80" style="font-family: monospace;"></textarea>
+<br />
+<button (click)="rebuild()" class="btn btn-primary mt-2">Rebuild Index</button>
+
+<div *ngIf="errorMessage" style="color: red; margin-top: 1rem;">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="successMessage" style="color: green; margin-top: 1rem;">
+  {{ successMessage }}
+</div>
+
+<div *ngIf="response" style="white-space: pre-wrap; margin-top: 1rem; font-family: monospace;">
+  <pre>{{ response }}</pre>
+</div>

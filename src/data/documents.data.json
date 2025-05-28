@@ -1,0 +1,82 @@
+[
+  {
+    "id": "doc1",
+    "content": "Always validate inputs, trust nothing from the frontend. The world turns while code executes. AI is not magic, it's mathematics in disguise. FastAPI and Pinecone make a strong combo. Metadata is underrated until you need it.",
+    "metadata": {
+      "author": "Dana",
+      "category": "tech"
+    }
+  },
+  {
+    "id": "doc2",
+    "content": "FastAPI and Pinecone make a strong combo. AI is not magic, it's mathematics in disguise. Always validate inputs, trust nothing from the frontend. Testing saves lives and time. Metadata is underrated until you need it.",
+    "metadata": {
+      "author": "Charlie",
+      "category": "tech"
+    }
+  },
+  {
+    "id": "doc3",
+    "content": "Documentation is love, documentation is life. Ohohoh, this is the first sentence of something great. Testing saves lives and time. Always validate inputs, trust nothing from the frontend. Systems evolve, but bugs remain persistent.",
+    "metadata": {
+      "author": "Alice",
+      "category": "fiction"
+    }
+  },
+  {
+    "id": "doc4",
+    "content": "Systems evolve, but bugs remain persistent. Always validate inputs, trust nothing from the frontend. Metadata is underrated until you need it. Debugging is like being the detective in a crime movie. FastAPI and Pinecone make a strong combo.",
+    "metadata": {
+      "author": "Dana",
+      "category": "science"
+    }
+  },
+  {
+    "id": "doc5",
+    "content": "Ohohoh, this is the first sentence of something great. Testing saves lives and time. Metadata is underrated until you need it. AI is not magic, it's mathematics in disguise. Debugging is like being the detective in a crime movie.",
+    "metadata": {
+      "author": "Bob",
+      "category": "science"
+    }
+  },
+  {
+    "id": "doc6",
+    "content": "Documentation is love, documentation is life. Ohohoh, this is the first sentence of something great. AI is not magic, it's mathematics in disguise. The world turns while code executes. Metadata is underrated until you need it.",
+    "metadata": {
+      "author": "Charlie",
+      "category": "fiction"
+    }
+  },
+  {
+    "id": "doc7",
+    "content": "Systems evolve, but bugs remain persistent. Debugging is like being the detective in a crime movie. Documentation is love, documentation is life. Ohohoh, this is the first sentence of something great. FastAPI and Pinecone make a strong combo.",
+    "metadata": {
+      "author": "Charlie",
+      "category": "tech"
+    }
+  },
+  {
+    "id": "doc8",
+    "content": "Ohohoh, this is the first sentence of something great. Testing saves lives and time. Debugging is like being the detective in a crime movie. The world turns while code executes. Documentation is love, documentation is life.",
+    "metadata": {
+      "author": "Alice",
+      "category": "science"
+    }
+  },
+  {
+    "id": "doc9",
+    "content": "Always validate inputs, trust nothing from the frontend. Debugging is like being the detective in a crime movie. Documentation is love, documentation is life. Systems evolve, but bugs remain persistent. Ohohoh, this is the first sentence of something great.",
+    "metadata": {
+      "author": "Bob",
+      "category": "history"
+    }
+  },
+  {
+    "id": "doc10",
+    "content": "Documentation is love, documentation is life. Debugging is like being the detective in a crime movie. AI is not magic, it's mathematics in disguise. Systems evolve, but bugs remain persistent. Metadata is underrated until you need it.",
+    "metadata": {
+      "author": "Charlie",
+      "category": "fiction"
+    }
+  }
+]

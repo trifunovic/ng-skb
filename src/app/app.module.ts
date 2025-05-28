@@ -1,20 +1,23 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './services/auth.interceptor';
+import { CommonModule } from '@angular/common';
 
+import { AuthInterceptor } from './services/auth.interceptor';
 import { AppComponent } from './app.component';
 import {
   TextUploadComponent,
   TextQueryComponent,
   TextRebuildComponent,
   SystemInfoComponent,
-  TextListComponent
+  TextListComponent,
+  TextConfigComponent,
+  TextPineconeComponent
 } from './pages/test-api';
+
+import { DocumentService } from './services/document.service';
 
 @NgModule({
   declarations: [
@@ -22,27 +25,35 @@ import {
     TextUploadComponent,
     TextQueryComponent,
     TextRebuildComponent,
+    TextListComponent,
     SystemInfoComponent,
-    TextListComponent
+    TextConfigComponent,
+    TextPineconeComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       { path: 'upload', component: TextUploadComponent },
       { path: 'query', component: TextQueryComponent },
       { path: 'rebuild', component: TextRebuildComponent },
-      { path: 'info', component: SystemInfoComponent },
       { path: 'list', component: TextListComponent },
+      { path: 'info', component: SystemInfoComponent },
+      { path: 'config', component: TextConfigComponent },
+      { path: 'pinecone', component: TextPineconeComponent },
       { path: '', redirectTo: 'upload', pathMatch: 'full' }
     ])
   ],
   providers: [
+    DocumentService,
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  }],
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-<button (click)="loadDocs()">Load Document IDs</button>
+<button (click)="loadConfig()">Test Pinecone</button> <!-- ili loadConfig() -->
 
 <div *ngIf="errorMessage" style="color: red; margin-top: 1rem;">
   {{ errorMessage }}
@@ -6,7 +6,6 @@
 <div *ngIf="successMessage" style="color: green; margin-top: 1rem;">
   {{ successMessage }}
 </div>
-
-<ul *ngIf="docIds.length > 0" style="margin-top: 1rem;">
-  <li *ngFor="let id of docIds">{{ id }}</li>
-</ul>
+<div *ngIf=" configData" style="white-space: pre-wrap; margin-top: 1rem;">
+  {{   configData }}
+</div>
