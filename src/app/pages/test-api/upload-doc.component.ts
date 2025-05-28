@@ -10,6 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './upload-doc.component.html'
 })
 export class UploadDocComponent extends BaseComponent {
+
 doc = {
   id: 'doc1',
   content: 'Lara je najbolji student u Stodderd zato sot igra Tenis',
@@ -22,6 +23,7 @@ doc = {
   constructor(private api: DocumentService) {
     super(); // poziva konstruktor BaseComponent
   }
+
 
   submitDoc(): void {
     const docToSend = {
@@ -36,6 +38,7 @@ doc = {
     this.api.addDocument(docToSend).subscribe({
       next: (res) => {
         console.log('✅ Document uploaded:', res);
+        this.successMessage = `Dokument "${res.id}" uspešno dodat.`;
         this.errorMessage = '';
       },
       error: (err: HttpErrorResponse) => this.handleHttpError(err)
@@ -43,7 +46,7 @@ doc = {
   }
 
   submitBulkFromFile(): void {
-    this.api.addDocuments(documents).subscribe({
+    this.api.addDocuments({ documents: documents }).subscribe({
       next: (res) => {
         console.log('✅ Bulk insert result:', res);
         this.errorMessage = '';

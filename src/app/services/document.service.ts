@@ -41,8 +41,8 @@ export class DocumentService {
       .pipe(catchError(this.handleError('getConfig', [])));
   }
 
-  addDocuments(docs: IDocument[]): Observable<any> {
-    return this.http.post(`${this.baseUrl}/add-documents/`, docs)
+  addDocuments(documents:any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/add-documents/`, documents)
       .pipe(catchError(this.handleError('addDocuments', [])));
   }
 
