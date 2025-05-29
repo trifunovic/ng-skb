@@ -16,9 +16,8 @@ export class DocumentService {
   }
 
   searchDocuments(query: string): Observable<any> {
-    const params = new HttpParams().set('query', query);
-    return this.http.get(`${this.baseUrl}/search/`, { params })
-      .pipe(catchError(this.handleError('searchDocuments', [])));
+    return this.http.post(`${this.baseUrl}/search/`, { query })
+        .pipe(catchError(this.handleError('searchDocuments', [])));
   }
 
   addDocument(doc: IDocument): Observable<any> {
@@ -57,5 +56,9 @@ export class DocumentService {
       throw error; // Rethrow to be caught by component for UI display
       // return of(result as T); // <- use this only if you want to suppress errors silently
     };
+  }
+
+  getFrontendVersion() {
+    return this.http.get('assets/frontend_version.txt', { responseType: 'text' });
   }
 }

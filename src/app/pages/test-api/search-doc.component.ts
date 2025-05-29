@@ -7,9 +7,9 @@ import { BaseComponent } from './base.component';
 @Component({
   selector: 'app-text-query',
   standalone: false,
-  templateUrl: './query-doc.component.html'
+  templateUrl: './search-doc.component.html'
 })
-export class QueryDocComponent extends BaseComponent {
+export class SearchDocComponent extends BaseComponent {
   query: string = '';
   results: any[] = [];
 

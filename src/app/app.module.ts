@@ -10,8 +10,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
 import { AppComponent } from './app.component';
 import {
   UploadDocComponent,
-  QueryDocComponent,
-  TextRebuildComponent,
+  SearchDocComponent,
+  RebuildIndexComponent,
 } from './pages/test-api';
 
 import { DocumentService } from './services/document.service';
@@ -20,8 +20,8 @@ import { DocumentService } from './services/document.service';
   declarations: [
     AppComponent,
     UploadDocComponent,
-    QueryDocComponent,
-    TextRebuildComponent,
+    SearchDocComponent,
+    RebuildIndexComponent,
   ],
   imports: [
     CommonModule,

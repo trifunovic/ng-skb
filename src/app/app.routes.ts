@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
 import {
   UploadDocComponent,
-  QueryDocComponent,
-  TextRebuildComponent,
+  SearchDocComponent,
+  RebuildIndexComponent,
 
 } from './pages/test-api';
 
 export const appRoutes: Routes = [
   { path: 'upload', component: UploadDocComponent },
-  { path: 'query', component: QueryDocComponent },
-  { path: 'rebuild', component: TextRebuildComponent },
+  { path: 'search', component: SearchDocComponent },
+  { path: 'rebuild', component: RebuildIndexComponent },
   { path: '', redirectTo: 'upload', pathMatch: 'full' }
 ];

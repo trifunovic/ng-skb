@@ -2,13 +2,14 @@
 
 <nav style="margin-top: 2rem;">
   <a routerLink="/upload">Upload</a> |
-  <a routerLink="/query">Query</a> |
+  <a routerLink="/search">Search</a> |
   <a routerLink="/rebuild">Rebuild</a> |
-  <a routerLink="/info">Info</a> |
-  <a routerLink="/list">List</a> |
-  <a routerLink="/config">Config</a> |
-  <a routerLink="/pinecone">Pinecone</a>
     <a routerLink="/test">Test</a>
 </nav>
 
 <router-outlet></router-outlet>
+<hr>
+footer
+<div style="color: gray; font-size: 0.9rem; margin-top: 2rem;">
+  FE verzija: {{ frontendVersion }}
+</div>

@@ -1,0 +1,35 @@
+<h2>Pretraga dokumenata</h2>
+
+<div style="margin-bottom: 1rem;">
+  <textarea
+    [(ngModel)]="query"
+    placeholder="Unesi upit ovde..."
+    rows="4"
+    style="width: 100%; font-size: 16px; padding: 10px;"
+  ></textarea>
+  <button (click)="search()" style="margin-top: 0.5rem;">🔍 Pretraži</button>
+</div>
+
+<div *ngIf="errorMessage" style="color: red; margin-top: 1rem; white-space: pre-wrap;">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="results.length > 0" style="margin-top: 1rem;">
+  <h3>Rezultati:</h3>
+  <ul>
+    <li *ngFor="let result of results" style="margin-bottom: 1.5rem;">
+      <strong>{{ result.document_id }}</strong>
+      <span style="color: gray;">({{ result.relevance_score | number:'1.2-2' }})</span>
+      <div style="margin-left: 1rem; margin-top: 0.3rem; font-style: italic;">
+        {{ result.short_answer || result.details?.content }}
+      </div>
+    </li>
+  </ul>
+</div>
+
+<hr />
+
+<button (click)="loadAllDocuments()">📄 Učitaj sve dokumente</button>
+<div *ngFor="let doc of results">
+  <strong>{{ doc.id }}:</strong> {{ doc.content }}
+</div>

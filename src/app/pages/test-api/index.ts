@@ -1,3 +1,3 @@
 export * from './upload-doc.component';
-export * from './query-doc.component';
-export * from './rebuild-doc.component';
+export * from './search-doc.component';
+export * from './rebuild-index.component';

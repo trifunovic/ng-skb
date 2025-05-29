@@ -6,9 +6,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-text-rebuild',
   standalone: false,
-  templateUrl: './rebuild-doc.component.html'
+  templateUrl: './rebuild-index.component.html'
 })
-export class TextRebuildComponent extends BaseComponent {
+export class RebuildIndexComponent extends BaseComponent {
 public docsJson: string = JSON.stringify(
 {
   "documents": [
