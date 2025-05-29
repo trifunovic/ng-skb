@@ -10,18 +10,24 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class TextRebuildComponent extends BaseComponent {
 public docsJson: string = JSON.stringify(
-  [
+{
+  "documents": [
     {
-      id: 'doc1',
-      content: 'Sample content for document 1',
-      metadata: { source: 'manual', category: 'example' }
+      "id": "doc1",
+      "content": "Ovo je test dokument 1",
+      "metadata": {
+        "source": "manual"
+      }
     },
     {
-      id: 'doc2',
-      content: 'Sample content for document 2',
-      metadata: {}  // <-- DODATO
+      "id": "doc2",
+      "content": "Ovo je test dokument 2",
+      "metadata": {
+        "source": "api"
+      }
     }
-  ],
+  ]
+},
   null,
   2
 );
